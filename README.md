@@ -7,7 +7,9 @@
 *This project is __WIP__* ! Stay tuned.
 
 This project aggregates examples of new Java and JVM features between versions 12 and 17 
-as well as practical java examples tailored for Java 17.
+as well as practical java examples tailored for Java 17**.
+
+** JDK17 is not available yet. The latest available JDK14 is used until JDK17 is available.
 
 ### Environment setup
 Make sure following software is installed on your PC.
