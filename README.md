@@ -27,9 +27,15 @@ gradle clean build test
 * New JEPs in JDK12 - JDK17
   * [JEP 325, 354, 361: Switch Expressions](https://openjdk.java.net/jeps/361)
   * [JEP 353: Reimplement the Legacy Socket API](https://openjdk.java.net/jeps/353)
-  * [JEP 355, 368: Text Blocks](https://openjdk.java.net/jeps/368)
+  * [JEP 355, 368, 378: Text Blocks](https://openjdk.java.net/jeps/378)
   * [JEP 305: Pattern Matching for instanceof](https://openjdk.java.net/jeps/305)
   * [JEP 358: Helpful NullPointerExceptions](https://openjdk.java.net/jeps/358)
+  * [JEP 373: Reimplement the Legacy DatagramSocket API](https://openjdk.java.net/jeps/373)
+  * [JEP 359, 384: Records](https://openjdk.java.net/jeps/384)
+  * [JEP 370, 383: Foreign-Memory Access API](https://openjdk.java.net/jeps/383)
+  * [JEP 339: Edwards-Curve Digital Signature Algorithm (EdDSA)](https://openjdk.java.net/jeps/339)
+  * [JEP 360: Sealed Classes (Preview)](https://openjdk.java.net/jeps/360)
+  * [JEP 371: Hidden Classes](https://openjdk.java.net/jeps/371)
 
 ### JDK12 - JDK17 Features
 * JDK12 [Feature list](https://openjdk.java.net/projects/jdk/12/)
