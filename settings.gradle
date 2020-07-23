@@ -1,0 +1,3 @@
+
+include "jep-384_records"
+project(":jep-384_records").projectDir = new File("jep-examples/jep-384_records")

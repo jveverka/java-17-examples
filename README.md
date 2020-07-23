@@ -33,7 +33,7 @@ gradle clean build test
   * [JEP 305: Pattern Matching for instanceof](https://openjdk.java.net/jeps/305)
   * [JEP 358: Helpful NullPointerExceptions](https://openjdk.java.net/jeps/358)
   * [JEP 373: Reimplement the Legacy DatagramSocket API](https://openjdk.java.net/jeps/373)
-  * [JEP 359, 384: Records](https://openjdk.java.net/jeps/384)
+  * [JEP 359, 384: Records](jep-examples/jep-384_records)
   * [JEP 370, 383: Foreign-Memory Access API](https://openjdk.java.net/jeps/383)
   * [JEP 339: Edwards-Curve Digital Signature Algorithm (EdDSA)](https://openjdk.java.net/jeps/339)
   * [JEP 360: Sealed Classes (Preview)](https://openjdk.java.net/jeps/360)
