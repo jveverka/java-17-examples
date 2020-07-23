@@ -24,7 +24,7 @@ gradle clean build test
 ```
 
 ### Examples
-* New JEPs in JDK12 - JDK17
+* Most interesting [JEPs](http://openjdk.java.net/jeps/1) implemented in JDK12 - JDK17
   * [JEP 325, 354, 361: Switch Expressions](https://openjdk.java.net/jeps/361)
   * [JEP 353: Reimplement the Legacy Socket API](https://openjdk.java.net/jeps/353)
   * [JEP 355, 368, 378: Text Blocks](https://openjdk.java.net/jeps/378)
