@@ -1,6 +1,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Java14](https://img.shields.io/badge/java-14-blue)](https://img.shields.io/badge/java-14-blue)
 [![Gradle](https://img.shields.io/badge/gradle-v6.5-blue)](https://img.shields.io/badge/gradle-v6.5-blue)
+[![Build Status](https://travis-ci.com/jveverka/java-17-examples.svg?branch=master)](https://travis-ci.com/jveverka/java-17-examples)
 
 # Java 17 examples
 
