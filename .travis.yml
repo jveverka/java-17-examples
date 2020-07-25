@@ -13,4 +13,3 @@ before_install:
   - java -version
 script:
   - gradle clean build test
-  - gradle --build-file di-examples/build.gradle clean test
