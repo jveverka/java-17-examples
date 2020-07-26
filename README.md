@@ -28,13 +28,13 @@ gradle clean build test
 
 ### Examples
 * Most interesting [JEPs](http://openjdk.java.net/jeps/1) implemented in JDK12 - JDK17
+  * [__JEP 359, 384: Records__](jep-examples/jep-384_records)
   * [JEP 325, 354, 361: Switch Expressions](https://openjdk.java.net/jeps/361)
   * [JEP 353: Reimplement the Legacy Socket API](https://openjdk.java.net/jeps/353)
   * [JEP 355, 368, 378: Text Blocks](https://openjdk.java.net/jeps/378)
   * [JEP 305: Pattern Matching for instanceof](https://openjdk.java.net/jeps/305)
   * [JEP 358: Helpful NullPointerExceptions](https://openjdk.java.net/jeps/358)
   * [JEP 373: Reimplement the Legacy DatagramSocket API](https://openjdk.java.net/jeps/373)
-  * [JEP 359, 384: Records](jep-examples/jep-384_records)
   * [JEP 370, 383: Foreign-Memory Access API](https://openjdk.java.net/jeps/383)
   * [JEP 339: Edwards-Curve Digital Signature Algorithm (EdDSA)](https://openjdk.java.net/jeps/339)
   * [JEP 360: Sealed Classes (Preview)](https://openjdk.java.net/jeps/360)
