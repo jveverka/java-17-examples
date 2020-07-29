@@ -37,3 +37,4 @@ subprojects {
 }
 
 project(':jep-384_records') {}
+project(':jep-358_helpful-npe') {}
