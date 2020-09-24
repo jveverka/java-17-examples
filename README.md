@@ -10,11 +10,11 @@
 This project aggregates examples of new Java and JVM features between versions 12 and 17 
 as well as practical java examples tailored for Java 17**.
 
-** JDK17 is not available yet. The latest available JDK14 is used until JDK17 is available.
+** JDK17 is not available yet. The latest available JDK15 is used until JDK17 is available.
 
 ### Environment setup
 Make sure following software is installed on your PC.
-* [OpenJDK 14](https://adoptopenjdk.net/releases.html?variant=openjdk14&jvmVariant=hotspot) or later.
+* [OpenJDK 15](https://adoptopenjdk.net/releases.html?variant=openjdk15&jvmVariant=hotspot) or later.
 * [Gradle 6.5](https://gradle.org/install/) or later
 * [docker.io 19.x](https://www.docker.com/) or later 
 
@@ -46,7 +46,7 @@ gradle clean build test
 * JDK14 [Feature list](https://openjdk.java.net/projects/jdk/14/)
 * JDK15 [Feature list](https://openjdk.java.net/projects/jdk/15/)
 * JDK16 [Feature list](https://openjdk.java.net/projects/jdk/16/)
-* JDK17 NA
+* JDK17 [Feature list](https://openjdk.java.net/projects/jdk/17/)
 
 ### References
 [Java 11 examples](https://github.com/jveverka/java-11-examples) 
