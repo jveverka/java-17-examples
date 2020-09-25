@@ -1,5 +1,5 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Java14](https://img.shields.io/badge/java-14-blue)](https://img.shields.io/badge/java-14-blue)
+[![Java15](https://img.shields.io/badge/java-15-blue)](https://img.shields.io/badge/java-15-blue)
 [![Gradle](https://img.shields.io/badge/gradle-v6.5-blue)](https://img.shields.io/badge/gradle-v6.5-blue)
 [![Build Status](https://travis-ci.com/jveverka/java-17-examples.svg?branch=master)](https://travis-ci.com/jveverka/java-17-examples)
 
@@ -10,7 +10,7 @@
 This project aggregates examples of new Java and JVM features between versions 12 and 17 
 as well as practical java examples tailored for Java 17**.
 
-** JDK17 is not available yet. The latest available JDK15 is used until JDK17 is available.
+** JDK17 is not available yet. The JDK15 is used until JDK17 is available.
 
 ### Environment setup
 Make sure following software is installed on your PC.
