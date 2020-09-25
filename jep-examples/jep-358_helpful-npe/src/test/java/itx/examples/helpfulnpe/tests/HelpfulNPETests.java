@@ -16,6 +16,8 @@ public class HelpfulNPETests {
         });
         assertTrue(npe instanceof NullPointerException);
         npe.printStackTrace();
+        String message = npe.getMessage();
+        assertEquals("Cannot assign field \"data\" because \"sw\" is null", message);
     }
 
 }
