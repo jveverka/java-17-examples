@@ -24,5 +24,3 @@ jobs:
         run: gradle -version
       - name: Run Gradle Build and tests
         run: gradle clean build test
-      - name: Run and Build API first example
-        run: gradle --build-file spring-api-first/build.gradle clean openApiGenerate build test
