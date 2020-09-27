@@ -4,3 +4,6 @@ project(":jep-384_records").projectDir = new File("jep-examples/jep-384_records"
 
 include "jep-358_helpful-npe"
 project(":jep-358_helpful-npe").projectDir = new File("jep-examples/jep-358_helpful-npe")
+
+include "jep-378_text-blocks"
+project(":jep-378_text-blocks").projectDir = new File("jep-examples/jep-378_text-blocks")
