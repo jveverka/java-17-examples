@@ -31,7 +31,7 @@ gradle clean build test
   * [__JEP 359, 384: Records__](jep-examples/jep-384_records)
   * [JEP 325, 354, 361: Switch Expressions](https://openjdk.java.net/jeps/361)
   * [JEP 353: Reimplement the Legacy Socket API](https://openjdk.java.net/jeps/353)
-  * [JEP 355, 368, 378: Text Blocks](https://openjdk.java.net/jeps/378)
+  * [__JEP 355, 368, 378: Text Blocks__](jep-examples/jep-378_text-blocks)
   * [JEP 305: Pattern Matching for instanceof](https://openjdk.java.net/jeps/305)
   * [__JEP 358: Helpful NullPointerExceptions__](jep-examples/jep-358_helpful-npe)
   * [JEP 373: Reimplement the Legacy DatagramSocket API](https://openjdk.java.net/jeps/373)
