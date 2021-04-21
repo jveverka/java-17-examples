@@ -10,13 +10,13 @@
 This project aggregates examples of new Java and JVM features between versions 12 and 17 
 as well as practical java examples tailored for Java 17**.
 
-** JDK17 is not available yet. The JDK15 is used until JDK17 is available.
+** JDK17 is not available yet. The JDK16 is used until JDK17 is available.
 
 ### Environment setup
 Make sure following software is installed on your PC.
-* [OpenJDK 15](https://adoptopenjdk.net/releases.html?variant=openjdk15&jvmVariant=hotspot) or later.
-* [Gradle 6.5](https://gradle.org/install/) or later
-* [docker.io 19.x](https://www.docker.com/) or later 
+* [OpenJDK 16](https://adoptopenjdk.net/releases.html?variant=openjdk15&jvmVariant=hotspot) or later.
+* [Gradle 7.0](https://gradle.org/install/) or later
+* [docker.io 20.x](https://www.docker.com/) or later 
 
 Please check [system requirements](docs/system-requirements.md) before. 
 
@@ -41,12 +41,12 @@ gradle clean build test
   * [JEP 371: Hidden Classes](https://openjdk.java.net/jeps/371)
 
 ### JDK12 - JDK17 Features
-* JDK12 [Feature list](https://openjdk.java.net/projects/jdk/12/)
-* JDK13 [Feature list](https://openjdk.java.net/projects/jdk/13/)
-* JDK14 [Feature list](https://openjdk.java.net/projects/jdk/14/)
-* JDK15 [Feature list](https://openjdk.java.net/projects/jdk/15/)
-* JDK16 [Feature list](https://openjdk.java.net/projects/jdk/16/)
-* JDK17 [Feature list](https://openjdk.java.net/projects/jdk/17/)
+* JDK12 [2019-03-19] [Feature list](https://openjdk.java.net/projects/jdk/12/)
+* JDK13 [2019-09-17] [Feature list](https://openjdk.java.net/projects/jdk/13/)
+* JDK14 [2020-03-17] [Feature list](https://openjdk.java.net/projects/jdk/14/)
+* JDK15 [2020-09-15] [Feature list](https://openjdk.java.net/projects/jdk/15/)
+* JDK16 [2021-03-16] [Feature list](https://openjdk.java.net/projects/jdk/16/)
+* JDK17 [2021-09-14] [Feature list](https://openjdk.java.net/projects/jdk/17/)
 
 ### References
 [Java 11 examples](https://github.com/jveverka/java-11-examples) 
