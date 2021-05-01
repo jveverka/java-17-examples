@@ -50,5 +50,6 @@ gradle clean build test
 
 ### References
 [Java 11 examples](https://github.com/jveverka/java-11-examples) 
+[A peek into Java 17](https://blogs.oracle.com/javamagazine/java-runtime-encapsulation-internals)
 
 _Enjoy !_ 
