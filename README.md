@@ -1,6 +1,6 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Java15](https://img.shields.io/badge/java-15-blue)](https://img.shields.io/badge/java-15-blue)
-[![Gradle](https://img.shields.io/badge/gradle-v6.5-blue)](https://img.shields.io/badge/gradle-v6.5-blue)
+[![Java15](https://img.shields.io/badge/java-17-blue)](https://img.shields.io/badge/java-17-blue)
+[![Gradle](https://img.shields.io/badge/gradle-v7-blue)](https://img.shields.io/badge/gradle-v7-blue)
 ![Build and Test](https://github.com/jveverka/java-17-examples/workflows/Build%20and%20Test/badge.svg)
 
 # Java 17 examples
@@ -8,13 +8,11 @@
 *This project is __WIP__* ! Stay tuned.
 
 This project aggregates examples of new Java and JVM features between versions 12 and 17 
-as well as practical java examples tailored for Java 17**.
-
-** JDK17 is not available yet. The JDK16 is used until JDK17 is available.
+as well as practical java examples tailored for Java 17.
 
 ### Environment setup
 Make sure following software is installed on your PC.
-* [OpenJDK 16](https://adoptopenjdk.net/releases.html?variant=openjdk15&jvmVariant=hotspot) or later.
+* [OpenJDK 17](https://adoptium.net/releases.html?variant=openjdk17&jvmVariant=hotspot) or later.
 * [Gradle 7.0](https://gradle.org/install/) or later
 * [docker.io 20.x](https://www.docker.com/) or later 
 
