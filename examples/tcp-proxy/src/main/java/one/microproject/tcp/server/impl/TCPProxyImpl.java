@@ -5,8 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.ServerSocket;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
@@ -42,11 +40,9 @@ public class TCPProxyImpl implements TcpProxy, ConnectionRegistry {
         int threadPoolSize = 1 + (maxConnections*2);
         LOG.info("Starting internal threadpool size={}", threadPoolSize);
         this.processors = Executors.newFixedThreadPool(threadPoolSize);
-        try (ServerSocket serverSocket = new ServerSocket(serverPort, maxConnections, InetAddress.getByName(serverHost))) {
-            this.tcpMain = new TcpMain(this, serverSocket, processors, targetHost, targetPort, maxConnections);
-            processors.submit(tcpMain);
-            LOG.info("TCP proxy started.");
-        }
+        this.tcpMain = new TcpMain(this, serverHost, serverPort, processors, targetHost, targetPort, maxConnections);
+        processors.submit(tcpMain);
+        LOG.info("TCP proxy started.");
     }
 
     @Override
