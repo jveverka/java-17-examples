@@ -1,8 +1,8 @@
 subprojects {
     apply plugin: "java"
 
-    sourceCompatibility = 17
-    targetCompatibility = 17
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 
     repositories {
         mavenCentral()
@@ -39,3 +39,5 @@ subprojects {
 project(':jep-384_records') {}
 project(':jep-358_helpful-npe') {}
 project(':jep-378_text-blocks') {}
+
+project(':tcp-proxy') {}

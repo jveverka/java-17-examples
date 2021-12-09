@@ -1,0 +1,12 @@
+{
+  "id": "server-001",
+  "name": "TCP Proxy Server",
+  "proxies": [
+    {
+      "serverHost": "0.0.0.0",
+      "serverPort": 4567,
+      "targetHost": "192.168.44.101",
+      "targetPort": 22
+    }
+  ]
+}
