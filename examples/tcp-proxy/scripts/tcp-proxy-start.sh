@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export JAVA_HOME=/opt/tcp-proxy/jdk1.8.0_251
+export JAVA_HOME=/opt/tcp-proxy/jdk-17.0.1+12
 export PATH=$JAAVA_HOME/bin:$PATH
 
 LOG_FILE=/opt/tcp-proxy/tcp-proxy.log

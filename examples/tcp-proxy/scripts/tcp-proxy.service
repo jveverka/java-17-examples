@@ -5,7 +5,7 @@ After=systemd-user-sessions.service
 After=network-online.target
 
 [Service]
-User=pi
+User=root
 Type=simple
 WorkingDirectory=/opt/tcp-proxy
 ExecStart=/opt/tcp-proxy/tcp-proxy-start.sh
