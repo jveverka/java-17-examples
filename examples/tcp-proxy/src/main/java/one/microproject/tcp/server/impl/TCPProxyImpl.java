@@ -21,6 +21,7 @@ public class TCPProxyImpl implements TcpProxy, ConnectionRegistry {
     private final Integer serverPort;
     private final String targetHost;
     private final Integer targetPort;
+    private final Integer maxConnections;
     private final Map<String, ActiveConnection> activeConnections;
 
     private TcpMain tcpMain;
@@ -31,17 +32,21 @@ public class TCPProxyImpl implements TcpProxy, ConnectionRegistry {
         this.serverPort = configuration.serverPort();
         this.targetHost = configuration.targetHost();
         this.targetPort = configuration.targetPort();
+        this.maxConnections = configuration.maxConnections();
         this.activeConnections = new ConcurrentHashMap<>();
     }
 
     @Override
     public void start() throws IOException {
         LOG.info("Starting TCP proxy ...");
-        this.processors = Executors.newFixedThreadPool(8);
-        ServerSocket serverSocket = new ServerSocket(serverPort, 10, InetAddress.getByName(serverHost));
-        this.tcpMain = new TcpMain(this, serverSocket, processors, targetHost, targetPort);
-        processors.submit(tcpMain);
-        LOG.info("TCP proxy started.");
+        int threadPoolSize = 1 + (maxConnections*2);
+        LOG.info("Starting internal threadpool size={}", threadPoolSize);
+        this.processors = Executors.newFixedThreadPool(threadPoolSize);
+        try (ServerSocket serverSocket = new ServerSocket(serverPort, maxConnections, InetAddress.getByName(serverHost))) {
+            this.tcpMain = new TcpMain(this, serverSocket, processors, targetHost, targetPort, maxConnections);
+            processors.submit(tcpMain);
+            LOG.info("TCP proxy started.");
+        }
     }
 
     @Override
@@ -64,6 +69,11 @@ public class TCPProxyImpl implements TcpProxy, ConnectionRegistry {
     public synchronized void register(ActiveConnection activeConnection) {
         activeConnections.put(activeConnection.getId(), activeConnection);
         LOG.info("Active connections: {}", activeConnections.size());
+    }
+
+    @Override
+    public synchronized int getActiveConnections() {
+        return activeConnections.size();
     }
 
     @Override

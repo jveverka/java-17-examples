@@ -6,7 +6,8 @@
       "serverHost": "0.0.0.0",
       "serverPort": 4567,
       "targetHost": "192.168.44.101",
-      "targetPort": 22
+      "targetPort": 22,
+      "maxConnections": 2
     }
   ]
 }

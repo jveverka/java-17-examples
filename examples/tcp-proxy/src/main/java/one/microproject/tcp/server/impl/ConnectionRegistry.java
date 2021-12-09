@@ -4,6 +4,8 @@ public interface ConnectionRegistry {
 
     void register(ActiveConnection activeConnection);
 
+    int getActiveConnections();
+
     void unregister(String id);
 
 }

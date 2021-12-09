@@ -3,6 +3,9 @@ plugins {
     id 'application'
 }
 
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
 group = 'one.microproject.tcp.server'
 version = '1.0.0'
 mainClassName = 'one.microproject.tcp.server.Main'

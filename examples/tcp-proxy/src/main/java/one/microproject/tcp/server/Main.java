@@ -23,7 +23,7 @@ public class Main {
         Configuration configuration = mapper.readValue(new File(args[0]), Configuration.class);
         LOG.info("Starting TCP Proxy id={} name={} proxies={}", configuration.id(), configuration.name(), configuration.proxies().size());
         configuration.proxies().forEach(c -> {
-            LOG.info("Proxy Config: {}:{} -> {}:{}", c.serverHost(), c.serverPort(), c.targetHost(), c.targetPort());
+            LOG.info("Proxy Config: {}:{} -> {}:{} maxConnections={}", c.serverHost(), c.serverPort(), c.targetHost(), c.targetPort(), c.maxConnections());
             TCPProxyImpl tcpProxy = new TCPProxyImpl(c);
             try {
                 tcpProxy.start();

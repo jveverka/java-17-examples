@@ -18,17 +18,19 @@ public class TcpMain implements Runnable, AutoCloseable {
     private final ExecutorService processors;
     private final String targetHost;
     private final Integer targetPort;
+    private final Integer maxConnections;
 
     private boolean active;
 
     public TcpMain(ConnectionRegistry connectionRegistry, ServerSocket serverSocket,
-                   ExecutorService processors, String targetHost, Integer targetPort) {
+                   ExecutorService processors, String targetHost, Integer targetPort, Integer maxConnections) {
         this.connectionRegistry = connectionRegistry;
         this.processors = processors;
         this.serverSocket = serverSocket;
         this.targetHost = targetHost;
         this.targetPort = targetPort;
         this.active = true;
+        this.maxConnections = maxConnections;
     }
 
     @Override
@@ -37,6 +39,12 @@ public class TcpMain implements Runnable, AutoCloseable {
             while (active) {
                 LOG.info("Waiting for incoming TCP connections ...");
                 Socket clientSocket = serverSocket.accept();
+                LOG.info("TCP connection accepted !");
+                if (connectionRegistry.getActiveConnections() >= maxConnections) {
+                    LOG.info("Max connections {} per server exceeded, closing connection {}:{} !", maxConnections, clientSocket.getRemoteSocketAddress(), clientSocket.getPort());
+                    clientSocket.close();
+                    continue;
+                }
                 String id = UUID.randomUUID().toString();
                 LOG.info("Connection id={} from {}:{} to {}:{} in progress ...", id, clientSocket.getRemoteSocketAddress(), clientSocket.getPort(), targetHost, targetPort);
                 try (Socket socket = new Socket(targetHost, targetPort)) {
@@ -50,8 +58,13 @@ public class TcpMain implements Runnable, AutoCloseable {
                 }
             }
         } catch (IOException e) {
-            LOG.info("TcpMain IOException");
+            LOG.error("TcpMain IOException: ", e);
             this.active = false;
+            try {
+                close();
+            } catch (Exception ex) {
+                LOG.error("TcpMain Exception: ", e);
+            }
         }
     }
 
@@ -60,6 +73,7 @@ public class TcpMain implements Runnable, AutoCloseable {
         LOG.info("Closing TCP Server ...");
         this.active = false;
         this.serverSocket.close();
+        this.processors.shutdown();
     }
 
 }
