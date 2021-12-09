@@ -39,12 +39,13 @@ public class TcpMain implements Runnable, AutoCloseable {
 
     @Override
     public void run() {
+        Socket clientSocket = null;
         try {
             LOG.info("Creating TCP socket");
             serverSocket = new ServerSocket(serverPort, maxConnections*2, InetAddress.getByName(serverHost));
             while (active) {
                 LOG.info("Waiting for incoming TCP connections on {} ...", serverSocket.getLocalPort());
-                Socket clientSocket = serverSocket.accept();
+                clientSocket = serverSocket.accept();
                 LOG.info("TCP connection accepted !");
                 if (connectionRegistry.getActiveConnections() >= maxConnections) {
                     LOG.info("Max connections {} per server exceeded, closing connection {}:{} !", maxConnections, clientSocket.getRemoteSocketAddress(), clientSocket.getPort());
@@ -54,17 +55,21 @@ public class TcpMain implements Runnable, AutoCloseable {
                 String id = UUID.randomUUID().toString();
                 LOG.info("Connection id={} from {}:{} to {}:{} in progress ...", id, clientSocket.getRemoteSocketAddress(), clientSocket.getPort(), targetHost, targetPort);
                 Socket socket = new Socket(targetHost, targetPort);
+                LOG.info("Connection id={} from {}:{} to {}:{} established.", id, clientSocket.getRemoteSocketAddress(), clientSocket.getPort(), targetHost, targetPort);
                 DataForwarder forwardPipe = new DataForwarder(" -> ", clientSocket.getInputStream(), socket.getOutputStream());
                 DataForwarder reversePipe = new DataForwarder(" <- ", socket.getInputStream(), clientSocket.getOutputStream());
                 ActiveConnection activeConnection = new ActiveConnection(id, socket, targetHost, targetPort, forwardPipe, reversePipe, connectionRegistry);
                 processors.submit(forwardPipe);
                 processors.submit(reversePipe);
                 connectionRegistry.register(activeConnection);
-                LOG.info("Connection id={} from {}:{} to {}:{} established.", id, clientSocket.getRemoteSocketAddress(), clientSocket.getPort(), targetHost, targetPort);
+                LOG.info("Connection id={} data forwarders created", id);
             }
         } catch (IOException e) {
-            LOG.error("TcpMain IOException: ", e);
             try {
+                LOG.error("TcpMain IOException: ", e);
+                if (clientSocket != null) {
+                    clientSocket.close();
+                }
                 close();
             } catch (Exception ex) {
                 LOG.error("TcpMain Exception: ", e);
