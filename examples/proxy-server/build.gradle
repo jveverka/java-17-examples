@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+group = 'one.microproject.proxy.server'
+version = '1.0.0'
+mainClassName = 'one.microproject.proxy.server.Main'
+applicationDefaultJvmArgs = ['-Xms32m', '-Xmx32m', '-XX:MaxMetaspaceSize=32m']
+
+dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation 'org.slf4j:slf4j-simple:1.7.32'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.13.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.0'
+
+    testImplementation 'org.testng:testng:7.4.0'
+}
+
+test {
+    // enable TestNG support (default is JUnit)
+    useTestNG()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}

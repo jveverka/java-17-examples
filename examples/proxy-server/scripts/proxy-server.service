@@ -1,0 +1,20 @@
+[Unit]
+Description=Proxy Server Service
+After=network.target
+After=systemd-user-sessions.service
+After=network-online.target
+
+[Service]
+User=root
+Type=simple
+WorkingDirectory=/opt/proxy-server
+ExecStart=/opt/proxy-server/proxy-server-start.sh
+ExecStop=/opt/proxy-server/proxy-server-stop.sh
+TimeoutSec=30
+Restart=on-failure
+RestartSec=30
+StartLimitInterval=350
+StartLimitBurst=10
+
+[Install]
+WantedBy=multi-user.target

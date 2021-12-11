@@ -8,5 +8,5 @@ project(":jep-358_helpful-npe").projectDir = new File("jep-examples/jep-358_help
 include "jep-378_text-blocks"
 project(":jep-378_text-blocks").projectDir = new File("jep-examples/jep-378_text-blocks")
 
-include "tcp-proxy"
-project(":tcp-proxy").projectDir = new File("examples/tcp-proxy")
+include "proxy-server"
+project(":proxy-server").projectDir = new File("examples/proxy-server")

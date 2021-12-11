@@ -40,4 +40,4 @@ project(':jep-384_records') {}
 project(':jep-358_helpful-npe') {}
 project(':jep-378_text-blocks') {}
 
-project(':tcp-proxy') {}
+project(':proxy-server') {}

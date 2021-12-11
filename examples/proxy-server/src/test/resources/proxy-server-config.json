@@ -1,0 +1,22 @@
+{
+  "id": "server-001",
+  "name": "Proxy Server",
+  "proxies": [
+    {
+      "protocol": "tcp",
+      "serverHost": "127.0.0.1",
+      "serverPort": 20222,
+      "targetHost": "127.0.0.1",
+      "targetPort": 2222,
+      "maxConnections": 2
+    },
+    {
+      "protocol": "udp",
+      "serverHost": "127.0.0.1",
+      "serverPort": 30333,
+      "targetHost": "127.0.0.1",
+      "targetPort": 3333,
+      "maxConnections": 1
+    }
+  ]
+}
