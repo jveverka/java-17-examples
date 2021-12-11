@@ -1,4 +1,4 @@
-package one.microproject.proxyserver.tests.tools;
+package one.microproject.proxyserver.test;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

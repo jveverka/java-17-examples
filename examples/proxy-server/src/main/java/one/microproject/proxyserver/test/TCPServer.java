@@ -1,4 +1,4 @@
-package one.microproject.proxyserver.tests.tools;
+package one.microproject.proxyserver.test;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +11,7 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import static one.microproject.proxyserver.tests.tools.Constants.MESSAGE_END;
+import static one.microproject.proxyserver.test.Constants.MESSAGE_END;
 
 public class TCPServer implements Runnable, AutoCloseable {
 

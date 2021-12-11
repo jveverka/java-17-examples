@@ -1,4 +1,4 @@
-package one.microproject.proxyserver.tests.tools;
+package one.microproject.proxyserver.test;
 
 public final class Constants {
 

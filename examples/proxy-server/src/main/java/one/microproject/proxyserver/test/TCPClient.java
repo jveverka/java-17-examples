@@ -1,4 +1,4 @@
-package one.microproject.proxyserver.tests.tools;
+package one.microproject.proxyserver.test;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,8 +13,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import static one.microproject.proxyserver.tests.tools.Constants.MESSAGE_END;
-import static one.microproject.proxyserver.tests.tools.Constants.MESSAGE_EOF;
+import static one.microproject.proxyserver.test.Constants.MESSAGE_END;
+import static one.microproject.proxyserver.test.Constants.MESSAGE_EOF;
 
 public class TCPClient {
 
