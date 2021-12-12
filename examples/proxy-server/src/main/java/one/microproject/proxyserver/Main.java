@@ -9,7 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -23,14 +25,9 @@ public class Main {
     private static final CountDownLatch cl = new CountDownLatch(1);
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        LOG.info("Loading configuration from: {}", args[0]);
         Runtime.getRuntime().addShutdownHook(new Thread(Main::stopAll));
-        try(FileInputStream configFile = new FileInputStream(args[0])) {
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-            Configuration configuration = mapper.readValue(configFile, Configuration.class);
-            startAll(configuration);
-        }
+        Configuration configuration = loadConfigOrGetDefault(args);
+        startAll(configuration);
         cl.await();
         LOG.info("Main terminated !");
     }
@@ -75,6 +72,21 @@ public class Main {
             LOG.info("done.");
         } catch (Exception e) {
             LOG.error("Proxy Server shutdown ERROR: ", e);
+        }
+    }
+
+    public static Configuration loadConfigOrGetDefault(String[] args) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        if (args.length > 0) {
+            LOG.info("Loading configuration from: {}", args[0]);
+            try(FileInputStream configFile = new FileInputStream(args[0])) {
+                return mapper.readValue(configFile, Configuration.class);
+            }
+        } else {
+            LOG.info("No configuration specified,using DEFAULT configuration !");
+            InputStream is = Main.class.getClassLoader().getResourceAsStream("proxy-server-config.json");
+            return mapper.readValue(is, Configuration.class);
         }
     }
 

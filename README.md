@@ -21,7 +21,7 @@ Please check [system requirements](docs/system-requirements.md) before.
 ### Compile & Test
 Most examples are build by top-level gradle project.
 ```
-gradle clean build test
+gradle clean build test installDist distZip
 ```
 
 ### Examples
