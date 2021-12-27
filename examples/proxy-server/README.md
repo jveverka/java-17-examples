@@ -14,7 +14,7 @@ gradle clean build test installDist distZip
 
 ## Run
 ```
-./build/install/proxy-server/bin/proxy-server src/test/resources/proxy-server-config.json
+./build/install/proxy-server/bin/proxy-server src/main/resources/proxy-server-config.json
 ```
 
 ## Test
