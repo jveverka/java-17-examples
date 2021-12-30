@@ -14,7 +14,7 @@ done
 
 echo "CLASS PATH: ${CLASS_PATH}"
 
-native-image --no-fallback -cp ${CLASS_PATH} one.microproject.proxyserver.Main
+native-image --no-fallback -H:ReflectionConfigurationFiles=reflectconfig.json -cp ${CLASS_PATH} one.microproject.proxyserver.Main
 
 rm one.microproject.proxyserver.main.build_artifacts.txt
 mv one.microproject.proxyserver.main build/distributions/
