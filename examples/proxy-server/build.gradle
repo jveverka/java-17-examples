@@ -11,6 +11,10 @@ version = '1.0.0'
 mainClassName = 'one.microproject.proxy.server.Main'
 applicationDefaultJvmArgs = ['-Xms32m', '-Xmx32m', '-XX:MaxMetaspaceSize=32m']
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     implementation 'org.slf4j:slf4j-api:1.7.32'
     implementation 'org.slf4j:slf4j-simple:1.7.32'
@@ -19,6 +23,7 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.0'
 
     testImplementation 'org.testng:testng:7.4.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
 }
 
 test {

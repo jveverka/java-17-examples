@@ -1,10 +1,8 @@
 #!/bin/bash
 # Requires installed graalvm and gradle
 
-cd ../..
 gradle clean build test installDist distZip
 
-cd examples/proxy-server
 JARS_DIR=build/install/proxy-server/lib/
 CLASS_PATH=""
 
