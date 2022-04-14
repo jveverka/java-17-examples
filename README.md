@@ -13,7 +13,7 @@ as well as practical java examples tailored for Java 17.
 ### Environment setup
 Make sure following software is installed on your PC.
 * [OpenJDK 17](https://adoptium.net/releases.html?variant=openjdk17&jvmVariant=hotspot) or later.
-* [Gradle 7.0](https://gradle.org/install/) or later
+* [Gradle 7.3](https://gradle.org/install/) or later
 * [docker.io 20.x](https://www.docker.com/) or later 
 
 Please check [system requirements](docs/system-requirements.md) before. 
