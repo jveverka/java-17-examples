@@ -1,0 +1,30 @@
+plugins {
+   id 'java'
+   id 'info.solidsoft.pitest' version '1.7.0'
+}
+
+repositories {
+   mavenCentral()
+}
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+dependencies {
+   implementation 'org.slf4j:slf4j-api:1.7.36'
+   implementation 'org.slf4j:slf4j-simple:1.7.36'
+   testImplementation 'org.testng:testng:7.5'
+}
+
+test {
+   useTestNG()
+   //testLogging.showStandardStreams = true
+   testLogging {
+      events "passed", "skipped", "failed"
+   }
+}
+
+pitest {
+   targetClasses = ['one.microproject.entropy.*']
+   junit5PluginVersion = '0.15'
+}
