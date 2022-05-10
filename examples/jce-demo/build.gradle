@@ -1,0 +1,29 @@
+
+plugins {
+   id 'java'
+   id 'maven-publish'
+}
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+        
+repositories {
+   mavenCentral()
+   mavenLocal()
+}
+
+dependencies {
+   implementation 'org.slf4j:slf4j-api:1.7.36'
+   implementation 'org.slf4j:slf4j-simple:1.7.36'
+   implementation 'org.bouncycastle:bcpg-jdk15on:1.70'
+   implementation 'org.bouncycastle:bcpkix-jdk15on:1.70'
+   testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+}
+
+test {
+   useJUnitPlatform()
+   testLogging {
+      events "passed", "skipped", "failed"
+   }
+}
+

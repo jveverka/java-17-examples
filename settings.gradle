@@ -13,3 +13,9 @@ project(":proxy-server").projectDir = new File("examples/proxy-server")
 
 include "entropy-demo"
 project(":entropy-demo").projectDir = new File("examples/entropy-demo")
+
+include "web-server-demo"
+project(":web-server-demo").projectDir = new File("examples/web-server-demo")
+
+include "jce-demo"
+project(":jce-demo").projectDir = new File("examples/jce-demo")

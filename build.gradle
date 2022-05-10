@@ -42,3 +42,5 @@ project(':jep-378_text-blocks') {}
 
 project(':proxy-server') {}
 project(':entropy-demo') {}
+project(':web-server-demo') {}
+project(':jce-demo') {}
