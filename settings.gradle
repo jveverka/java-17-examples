@@ -19,3 +19,6 @@ project(":web-server-demo").projectDir = new File("examples/web-server-demo")
 
 include "jce-demo"
 project(":jce-demo").projectDir = new File("examples/jce-demo")
+
+include "timezone-demo"
+project(":timezone-demo").projectDir = new File("examples/timezone-demo")

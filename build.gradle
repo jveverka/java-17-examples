@@ -9,10 +9,10 @@ subprojects {
     }
 
     dependencies {
-        implementation 'org.slf4j:slf4j-api:1.7.36'
-        implementation 'org.slf4j:slf4j-simple:1.7.36'
+        implementation 'org.slf4j:slf4j-api:2.0.3'
+        implementation 'org.slf4j:slf4j-simple:2.0.3'
 
-        testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
     }
 
     test {
@@ -44,3 +44,4 @@ project(':proxy-server') {}
 project(':entropy-demo') {}
 project(':web-server-demo') {}
 project(':jce-demo') {}
+project(':timezone-demo') {}
