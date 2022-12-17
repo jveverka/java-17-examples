@@ -22,3 +22,6 @@ project(":jce-demo").projectDir = new File("examples/jce-demo")
 
 include "timezone-demo"
 project(":timezone-demo").projectDir = new File("examples/timezone-demo")
+
+include "files-compare-demo"
+project(":files-compare-demo").projectDir = new File("examples/files-compare-demo")

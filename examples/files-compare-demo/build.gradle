@@ -1,0 +1,32 @@
+
+plugins {
+   id 'java'
+   id 'maven-publish'
+   id 'application'
+}
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+        
+repositories {
+   mavenCentral()
+   mavenLocal()
+}
+
+dependencies {
+   implementation 'org.slf4j:slf4j-api:2.0.3'
+   implementation 'org.slf4j:slf4j-simple:2.0.3'
+   testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+}
+
+application {
+   mainClass = 'one.microproject.filescompare.Main'
+}
+
+test {
+   useJUnitPlatform()
+   testLogging {
+      events "passed", "skipped", "failed"
+   }
+}
+

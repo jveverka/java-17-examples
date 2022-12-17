@@ -45,3 +45,4 @@ project(':entropy-demo') {}
 project(':web-server-demo') {}
 project(':jce-demo') {}
 project(':timezone-demo') {}
+project(':files-compare-demo') {}
