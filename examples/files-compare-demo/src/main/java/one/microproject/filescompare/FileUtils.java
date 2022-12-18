@@ -15,7 +15,7 @@ public final class FileUtils {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         FileInputStream fis = new FileInputStream(file.toFile());
 
-        byte[] byteArray = new byte[10240];
+        byte[] byteArray = new byte[102400];
         int bytesCount = 0;
         while ((bytesCount = fis.read(byteArray)) != -1) {
             digest.update(byteArray, 0, bytesCount);

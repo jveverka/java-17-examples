@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.security.NoSuchAlgorithmException;
-import java.util.Map;
 
 public class Main {
 
@@ -107,7 +106,6 @@ public class Main {
         LOGGER.info("# Duration       : {}", FileUtils.getDuration(duration));
         LOGGER.info("#**************************************************");
 
-        LOGGER.info("");
         if (context.hasErrors()) {
             LOGGER.error("ERRORS found: {}", context.getErrors().size());
             for (String error : context.getErrors()) {
