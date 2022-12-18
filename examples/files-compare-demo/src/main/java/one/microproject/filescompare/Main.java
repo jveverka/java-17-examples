@@ -78,20 +78,36 @@ public class Main {
                 }
             }
         }
+        context.close();
+        Float duration = context.getDurationSec();
+        Float bytesPerSec = context.getDataBytes() / duration;
+
+        LOGGER.info("#**************************************************");
+        LOGGER.info("File extensions: {}", context.getExtensions().size());
+        long cumulativeCounter = 0;
+        for (String key: context.getExtensions().keySet()) {
+            if (key.length() <= 4) {
+                LOGGER.info(" {}: {}", key, context.getExtensions().get(key));
+            } else {
+                cumulativeCounter = cumulativeCounter + context.getExtensions().get(key);
+            }
+        }
+        LOGGER.info(" others: {}", cumulativeCounter);
 
         LOGGER.info("#**************************************************");
         LOGGER.info("# SRC: {}", srcPath);
         LOGGER.info("# DST: {}", dstPath);
-        LOGGER.info("# Dirs   scanned: {}", context.getDirectoryCounter());
-        LOGGER.info("# Others scanned: {}", context.getOtherCounter());
-        LOGGER.info("# Files  scanned: {}", context.getFileCounter());
-        LOGGER.info("# Bytes  scanned: {} Bytes", context.getDataBytes());
-        LOGGER.info("# Bytes  scanned: {}", FileUtils.getHumanReadableSize(context.getDataBytes()));
+        LOGGER.info("# Dirs    scanned: {}", context.getDirectoryCounter());
+        LOGGER.info("# Files   scanned: {}", context.getFileCounter());
+        LOGGER.info("# Others  scanned: {}", context.getOtherCounter());
+        LOGGER.info("# Bytes   scanned: {} Bytes", context.getDataBytes());
+        LOGGER.info("# Bytes   scanned: {}", FileUtils.getHumanReadableSize(context.getDataBytes() / 1f));
+        LOGGER.info("# Scan speed     : {}/s", FileUtils.getHumanReadableSize(bytesPerSec));
+        LOGGER.info("# Duration       : {} s", duration);
+        LOGGER.info("# Duration       : {}", FileUtils.getDuration(duration));
         LOGGER.info("#**************************************************");
-        LOGGER.info("File extensions: {}", context.getExtensions().size());
-        for (String key: context.getExtensions().keySet()) {
-            LOGGER.info(" {}: {}", key, context.getExtensions().get(key));
-        }
+
+        LOGGER.info("");
         if (context.hasErrors()) {
             LOGGER.error("ERRORS found: {}", context.getErrors().size());
             for (String error : context.getErrors()) {

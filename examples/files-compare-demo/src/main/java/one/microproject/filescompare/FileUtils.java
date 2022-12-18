@@ -1,6 +1,5 @@
 package one.microproject.filescompare;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -40,8 +39,8 @@ public final class FileUtils {
         return Path.of(dstPath.toString(), delta).normalize();
     }
 
-    public static String getHumanReadableSize(Long size) {
-        if (size <= 1024) {
+    public static String getHumanReadableSize(Float size) {
+        if (size <= 1024f) {
             return size + " B";
         } else {
             int counter = 0;
@@ -70,6 +69,31 @@ public final class FileUtils {
             return formattedResult + " " + unit;
         }
 
+    }
+
+    public static String getDuration(float durationSec) {
+        if (durationSec < 60) {
+            String formattedResult = String.format("%.03f", durationSec);
+            return formattedResult + " s";
+        } else if (durationSec < 3600) {
+            int minutes = (int)(durationSec / 60);
+            float reminder = durationSec - (minutes * 60);
+            String formattedReminder = String.format("%.03f", reminder);
+            return minutes + ":" + formattedReminder;
+        } else if (durationSec < 86400) {
+            int hours = (int)(durationSec / 3600);
+            int minutes = (int)(durationSec - (hours * 3600)) / 60;
+            float reminder = durationSec - (hours * 3600) - (minutes * 60);
+            String formattedReminder = String.format("%.03f", reminder);
+            return hours + ":" + minutes + ":" + formattedReminder;
+        } else {
+            int days = (int)(durationSec / 86400);
+            int hours = (int)(durationSec - (days * 86400)) / 3600;
+            int minutes = (int)(durationSec - (days * 86400) - (hours * 3600)) / 60;
+            float reminder = durationSec - (days * 86400) - (hours * 3600) - (minutes * 60);
+            String formattedReminder = String.format("%.03f", reminder);
+            return days + " days " + hours + ":" + minutes + ":" + formattedReminder;
+        }
     }
 
 }

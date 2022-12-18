@@ -22,6 +22,8 @@ public class CompareDirContext {
     private long dataBytes;
     private Map<String, Integer> extensions;
     private Queue<Path> paths;
+    private long startTimeStamp;
+    private long durationMs;
 
     private List<String> errors;
 
@@ -33,6 +35,8 @@ public class CompareDirContext {
         this.extensions = new HashMap<>();
         this.paths = new LinkedList<>();
         this.errors = new ArrayList<>();
+        this.startTimeStamp = System.currentTimeMillis();
+        this.durationMs = 0;
     }
 
     public void addPaths(File[] files) {
@@ -99,6 +103,14 @@ public class CompareDirContext {
 
     public boolean hasErrors() {
         return !errors.isEmpty();
+    }
+
+    public void close() {
+        this.durationMs = System.currentTimeMillis() - this.startTimeStamp;
+    }
+
+    public float getDurationSec() {
+        return this.durationMs / 1000f;
     }
 
 }
